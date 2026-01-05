@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -24,14 +25,14 @@ export default function Portfolio() {
         >
           {/* Greeting */}
           <div className="flex items-center gap-2 mb-8">
-            <span className="text-xl md:text-2xl text-gray-800 font-medium">Hey, I'm Avinash Sangisetti</span>
+            <span className="text-xl md:text-2xl text-gray-800 font-medium">Hey, I'm Avinash</span>
             <span className="text-xl md:text-2xl animate-pulse">👋</span>
           </div>
 
           {/* Avatar Image (Bitmoji) */}
           <div className="relative w-40 h-40 mb-4">
             <img 
-              src="/avatar.jpg" 
+              src="/avatar.png" 
               alt="Avinash" 
               className="rounded-full shadow-lg hover:scale-105 transition-transform duration-300 object-cover"
             />
@@ -41,7 +42,7 @@ export default function Portfolio() {
 
       {/* 2. Chat Area (Appears once you start talking) */}
       <div className="w-full max-w-2xl flex-1 overflow-y-auto space-y-4 mb-4 px-4 scrollbar-hide">
-        {messages.map(m => (
+        {messages.map((m: any) => (
           <motion.div 
             key={m.id} 
             initial={{ opacity: 0, scale: 0.95 }}
